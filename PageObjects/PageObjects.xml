@@ -1,0 +1,487 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PageObjects</name>
+    </assembly>
+    <members>
+        <member name="T:AutomationPractice.PageObjects.PageElementSearchContext">
+            <summary>
+            Used to represent they types of properties that a PageElementID can use to identify
+            a page element.
+            
+            Css indicates CSS selector
+            Id indicates id
+            XPath indicates xpath
+            ClassName class
+            </summary>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.PageElementID">
+            <summary>
+            An ID used by classes implementing IPageObjectImplementor to locate page elements.null
+            <example>
+            A PageElementID instance whose Context is PageElementSearchContext.Id and Value is "submitData" means
+            that the page element that would be identified by this PageElementID instance has an id whose value is "submitData"
+            
+            A PageElementID instance whose Context is PageElementSearchContext.ClassName and Value is "submitData" means
+            that the page element that would be identified by this PageElementID instance has an class attribute whose value is "submitData"
+            </example>
+            </summary>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.PageElementID.Context">
+            <summary>
+             Specifies the property used to identify the element
+            </summary>
+            <value>This value is a PageElementSearchContext value</value>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.PageElementID.Value">
+            <summary>
+             specifies the value that the property specified by Context should have
+            </summary>
+            <value> this value is a string</value>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.IClickable">
+            <summary>
+            An interface to be implemented by classes that represent page elements that can be clicked.
+            </summary>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.IClickable.Click">
+            <summary>
+            Clicks the page element represented by the class that implements this interface.
+            </summary>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.IReadable">
+            <summary>
+            An interface to be implemented by classes that represent page elements that can have text-readable values
+            </summary>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.IReadable.Read">
+            <summary>
+            Returns the text value of element represented by the class that implements this interface.
+            </summary>
+            <returns>The value returned is a string</returns>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.IInputable">
+            <summary>
+            An interface to be implemented by classes that represent page elements that can receive text-readable input
+            </summary>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.IInputable.Input(System.String)">
+            <summary>
+            Inputs the value to the element represented by the class that represents this interface.
+            </summary>
+            <param name="value">The value that the input element will receive</param>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.WebDriverClickable">
+            <summary>
+            Implementation of IClickable for a Selenium IWebElement instance
+            </summary>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.WebDriverClickable.Element">
+            <summary>
+            The contained Selenium IWebElement Instance
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.WebDriverClickable.Driver">
+            <summary>
+            The IWebDriver instance
+            </summary>
+            <value></value>        
+        </member>
+        <member name="M:AutomationPractice.PageObjects.WebDriverClickable.#ctor(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Constructor. The argument for element is assigned to this.Element
+            </summary>
+            <param name="element">IWebElement</param>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.WebDriverClickable.#ctor(OpenQA.Selenium.IWebElement,OpenQA.Selenium.IWebDriver)">
+            <summary>
+            Constructor. The argument for element is assigned to this.Element.
+            The argument for driver is assigned to this.Driver.
+            </summary>
+            <param name="element">IWebElement</param>
+            <param name="driver">IWebDriver</param>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.WebDriverReadable">
+            <summary>
+            Implementation of IReadable for a Selenium IWebElement instance
+            </summary>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.WebDriverReadable.Element">
+            <summary>
+            The contained Selenium IWebElementInstance
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.WebDriverReadable.Read">
+            <summary>
+            Returnstext associated with this instance's IWebElement
+            </summary>
+            <returns>
+            This method returns a string
+            </returns>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.WebDriverInputable">
+            <summary>
+            Implementation of IInputable for a Selenium IWebElement instance
+            </summary>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.WebDriverInputable.Element">
+            <summary>
+            The contained Selenium IWebElementInstance
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.WebDriverInputable.Input(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.IPageObjectImplementor">
+            <summary>
+            Interface to be implemented by classes that identify and create IClickable, IReadable and IInputable
+            instances for page elements.
+            </summary>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.IPageObjectImplementor.CreateClickable(AutomationPractice.PageObjects.PageElementID)">
+            <summary>
+            returns an IClickable instance representing the page element
+            associated with id
+            </summary>
+            <param name="id">PageElementID</param>
+            <returns>IClickakble</returns>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.IPageObjectImplementor.CreateReadable(AutomationPractice.PageObjects.PageElementID)">
+            <summary>
+            returns an IReadable instance representing the page element
+            associated with id
+            </summary>
+            <param name="id">PageElementID</param>
+            <returns>IReadable</returns>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.IPageObjectImplementor.CreateInputable(AutomationPractice.PageObjects.PageElementID)">
+            <summary>
+            returns an IInputable instance representing the page element
+            associated with id
+            </summary>
+            <param name="id">PageElementID</param>
+            <returns>IInputable</returns>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.IPageObjectImplementor.Init(System.String)">
+            <summary>
+            Specifies the url where page elements should be identified.
+            The parameter url will be assigned to the IPageObjectImplementor's Url property.
+            </summary>
+            <param name="url">string</param>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.IPageObjectImplementor.Dispose">
+            <summary>
+            Disposes this instance
+            </summary>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.IPageObjectImplementor.Url">
+            <summary>
+            The url where page elements shoudl be identified
+            </summary>
+            <value>string</value>
+            
+        </member>
+        <member name="T:AutomationPractice.PageObjects.WebDriverPageObjectImplementor">
+            <summary>
+            Implments the IPageObjectImplementor interface using the Selenium WebDriver
+            </summary>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.WebDriverPageObjectImplementor.Driver">
+            <summary>
+            used to locate and perform user interactions on web elements. When Driver is accessed
+            for the first time, it is instantiated as a ChromeDriver object with an Implicit Wait Time of 10 Seconds and the
+            Chrome window is maximized.
+            Chrome Version 77 is required.
+            </summary>
+            <value>IWebDriver</value>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.WebDriverPageObjectImplementor.Url">
+            <summary>
+            When this property is accessed, it returns Driver.Url
+            When this property is assigned a value, it assigns the value
+            to Driver.Url
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.WebDriverPageObjectImplementor.Init(System.String)">
+            <summary>
+            Assigns Driver.Url to url
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.WebDriverPageObjectImplementor.CreateClickable(AutomationPractice.PageObjects.PageElementID)">
+            <summary>
+            Creates an IClickable instance that corresponds to id.
+            </summary>
+            <param name="id">PageElementID</param>
+            <returns>IClickable</returns>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.WebDriverPageObjectImplementor.CreateReadable(AutomationPractice.PageObjects.PageElementID)">
+            <summary>
+            Creates an IReadable instance that corresponds to id.
+            </summary>
+            <param name="id">PageElementID</param>
+            <returns>IReadable</returns>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.WebDriverPageObjectImplementor.CreateInputable(AutomationPractice.PageObjects.PageElementID)">
+            <summary>
+            Creates an IInputable instance that corresponds to id.
+            </summary>
+            <param name="id">PageElementID</param>
+            <returns>IInputable</returns>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.WebDriverPageObjectImplementor.Dispose">
+            <summary>
+            Closes Driver and then disposes Driver.
+            </summary>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.WebDriverPageObjectImplementor.transformPageElementID(AutomationPractice.PageObjects.PageElementID)">
+            <summary>
+            Returns an OpenQA.Selenium.By instance that is equivalent to 
+            id. Only supports PageElementID instances whose Context value is
+            Css, ClassName, Id, or XPath.
+            </summary>
+            <param name="id"></param>
+            <returns>OpenQA.Selenium.By</returns>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.Page">
+             <summary>
+             Representation of a Graphical User Interface.
+             Provides methods for creating elements that create 
+             IClickable, IReadable and IInputable instances.
+             
+            
+             </summary>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.Page.Implementor">
+            <summary>
+            The IPageObjectImplementor instance that provides the functionality
+            to obtain the IClickable, IReadable, and IInputable instances returned
+            from CreateClickable(), CreateReadable(), and CreateInputable();
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.Page.#ctor(AutomationPractice.PageObjects.IPageObjectImplementor)">
+            <summary>
+            Assigns implementor to This.Implementor
+            </summary>
+            <param name="implementor">IPageObjectImplementor</param>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.Page.CreateClickable(AutomationPractice.PageObjects.PageElementID)">
+            <summary>
+            Returns an IClickable instance identified by id
+            </summary>
+            <param name="id">PageElementID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.Page.CreateReadable(AutomationPractice.PageObjects.PageElementID)">
+            <summary>
+            Returns an IReadable instance identified by id
+            </summary>
+            <param name="id">PageElementID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.Page.CreateInputable(AutomationPractice.PageObjects.PageElementID)">
+            <summary>
+            Returns an IInputable instance identified by id
+            </summary>
+            <param name="id">PageElementID</param>
+            <returns></returns>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.Page.GoToUrl(System.String)">
+            <summary>
+            Navigates the user interface to the given url.
+            If the user interface is already at the provided url,
+            this method does nothing.
+            
+            This method assigns url to this.Implementor.Url
+            </summary>
+            <param name="url">string</param>
+            <returns></returns>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.AutomationPracticeIDs">
+            <summary>
+            Static class that contains PageElementID instances for page elements used by
+            subclasses of Page.
+            </summary>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.AutomationPracticeIndexPage">
+            <summary>
+            Subclass of Page
+            
+            Represents elements for http://automationpractice.com/index.php
+            
+            Implements IHasWomenTab
+            </summary>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.AutomationPracticeIndexPage.#ctor(AutomationPractice.PageObjects.IPageObjectImplementor)">
+            <summary>
+            Constructor. Navigates the Automation to http://automationpractice.com/index.php
+            implementor.Url is not http://automationpractice.com/index.php
+            </summary>
+            <param name="implementor"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.AutomationPracticeIndexPage.SignInButton">
+            <summary>
+            IClickable instance that represents the sign in button.
+            </summary>
+            <returns>IClickable</returns>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.AutomationPracticeIndexPage.WomenTab">
+            <summary>
+            IClickable instance that represents the Women tab.
+            </summary>
+            <returns>IClickable</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:AutomationPractice.PageObjects.SignInForm" -->
+        <!-- Badly formed XML comment ignored for member "M:AutomationPractice.PageObjects.SignInForm.#ctor(AutomationPractice.PageObjects.IPageObjectImplementor)" -->
+        <member name="P:AutomationPractice.PageObjects.SignInForm.EmailInput">
+            <summary>
+            IInputable instance that represents the text input for email
+            </summary>
+            <value>IInputable</value>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.SignInForm.PasswordInput">
+            <summary>
+            IInputable instance that represents the text input for password
+            </summary>
+            <value>IInputable</value>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.SignInForm.SubmitLoginButton">
+            <summary>
+            IClickable instance that represents the Submit button for the sign in form.
+            </summary>
+            <value>IClickable</value>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.MyAccount">
+            <summary>
+            Subclass of Page
+            Represents elements for http://automationpractice.com/index.php?controller=my-account
+            
+            
+            Implements IHasWomenTab
+            </summary> 
+        </member>
+        <member name="M:AutomationPractice.PageObjects.MyAccount.#ctor(AutomationPractice.PageObjects.IPageObjectImplementor)">
+            <summary>
+            Constructor. Navigates the Automation to http://automationpractice.com/index.php?controller=my-account
+            implementor.Url is not http://automationpractice.com/index.php?controller=my-account
+            </summary>
+            <param name="implementor"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.WomenCategoriesPage">
+            <summary>
+            Sublcass of Page.
+            
+            Represents elements for AutomationPractice.com that are displayed when the 
+            Women tab is clicked.
+            </summary>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.WomenCategoriesPage.#ctor(AutomationPractice.PageObjects.IPageObjectImplementor)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="implementor"></param>
+            <returns></returns>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.WomenCategoriesPage.TopsCategoryExpandButton">
+            <summary>
+            IClickable that represents the Tops category.
+            </summary>
+            <value>IClickable</value>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.WomenCategoriesPage.DressesCategoryExpandButton">
+            <summary>
+            IClickable that represents the Dresses category
+            </summary>
+            <value></value>       
+        </member>
+        <member name="P:AutomationPractice.PageObjects.WomenCategoriesPage.HeadingCounter">
+            <summary>
+            IReadable that represents the text that indicates how many products are displayed.
+            </summary>
+            <value>IClickable</value>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.WomenCategoriesPage.AddItem1ToCartButton">
+            <summary>
+            IClickable that represents the "Add To Cart" button for the first product.
+            </summary>
+            <value>IClickable</value>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.WomenCategoriesPage.ShoppingCart">
+            <summary>
+            Returns an IHasShoppingCartDropdown instance
+            </summary>
+            <value>IHasShoppingCartDropdown</value>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.IHasWomenTab">
+            <summary>
+            Interface to be implemented by Page classes that represent a page with the Women button
+            </summary>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.IHasWomenTab.WomenTab">
+            <summary>
+            Returns an IClickable for the Women Button page element
+            </summary>
+            <value>IClickable</value>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.IHasShoppingCartDropdown">
+            <summary>
+            Interface to be implemented by Page classes that represent a page with the 
+            shopping card dropdown
+            </summary>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.IHasShoppingCartDropdown.ShoppingCartItemsQuantity">
+            <summary>
+            returns the number of items in the shopping cart
+            </summary>
+            <value>string</value>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.IHasShoppingCartDropdown.ShoppingCartIsEmpty">
+            <summary>
+            returns true of the shopping cart has 0 items.
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:AutomationPractice.PageObjects.ShoppingCartDropdown">
+            <summary>
+            Represents the Shopping Cart dropdown for AutomationPractice.com
+            </summary>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.ShoppingCartDropdown.#ctor(AutomationPractice.PageObjects.IPageObjectImplementor)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="implementor"></param>
+            <value></value>
+        </member>
+        <member name="P:AutomationPractice.PageObjects.ShoppingCartDropdown.ShoppingCartItemsQuantity">
+            <summary>
+            Returns the number of items in the shopping cart as a string.
+            </summary>
+            <value>string</value>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.Parser.PageObjectParser.GetPageStrings(System.String)">
+            <summary>
+            Parses the contents of file and returns an array of strings, each representing a Page definition
+            </summary>
+            <param name="file">string</param>
+            <returns>string[]</returns>
+        </member>
+        <member name="M:AutomationPractice.PageObjects.Parser.PageObjectParser.ParsePage(System.String[])">
+            <summary>
+            Returns a Parser.Page instance.
+            </summary>
+            <param name="tokens"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

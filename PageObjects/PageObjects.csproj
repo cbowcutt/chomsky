@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\dev\sandbox\AutomationPractice\AutomationPractice\PageObjects\PageObjects.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0"/>
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="77.0.3865.4000"/>
+    <PackageReference Include="Selenium.Support" Version="3.141.0"/>
+    <PackageReference Include="System.CodeDom" Version="4.6.0"/>
+  </ItemGroup>
+</Project>

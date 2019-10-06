@@ -1,0 +1,156 @@
+\hypertarget{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor}{}\doxysection{Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor Interface Reference}
+\label{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor}\index{AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}}
+
+
+Interface to be implemented by classes that identify and create \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_clickable}{I\+Clickable}}, \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_readable}{I\+Readable}} and \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_inputable}{I\+Inputable}} instances for page elements.  
+
+
+Inheritance diagram for Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_clickable}{I\+Clickable}} \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_a40bccfc5969a143ae73cd16ca2eabf1b}{Create\+Clickable}} (\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}} id)
+\begin{DoxyCompactList}\small\item\em returns an \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_clickable}{I\+Clickable}} instance representing the page element associated with id \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_readable}{I\+Readable}} \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_ad67b4552578f3b0cc0fab3a1e9f5e6ce}{Create\+Readable}} (\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}} id)
+\begin{DoxyCompactList}\small\item\em returns an \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_readable}{I\+Readable}} instance representing the page element associated with id \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_inputable}{I\+Inputable}} \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_aa0d8b78da14050f7d491f0d8e50fb358}{Create\+Inputable}} (\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}} id)
+\begin{DoxyCompactList}\small\item\em returns an \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_inputable}{I\+Inputable}} instance representing the page element associated with id \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_a2acccb4a97af37b0aaad5a752499b739}{Init}} (string url)
+\begin{DoxyCompactList}\small\item\em Specifies the url where page elements should be identified. The parameter url will be assigned to the \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor}{I\+Page\+Object\+Implementor}}\textquotesingle{}s Url property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_a68625051fcd9080dc23f6221e8949e16}{Dispose}} ()
+\begin{DoxyCompactList}\small\item\em Disposes this instance \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_add5e3c188aa67c11087207df262fa546}{Url}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The url where page elements shoudl be identified \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface to be implemented by classes that identify and create \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_clickable}{I\+Clickable}}, \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_readable}{I\+Readable}} and \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_inputable}{I\+Inputable}} instances for page elements. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_a40bccfc5969a143ae73cd16ca2eabf1b}\label{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_a40bccfc5969a143ae73cd16ca2eabf1b}} 
+\index{AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}!CreateClickable@{CreateClickable}}
+\index{CreateClickable@{CreateClickable}!AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{CreateClickable()}{CreateClickable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_clickable}{I\+Clickable}} Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor.\+Create\+Clickable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}}]{id }\end{DoxyParamCaption})}
+
+
+
+returns an \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_clickable}{I\+Clickable}} instance representing the page element associated with id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\+Clickakble
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_aa8b2450a919ee2feb1a5d1e485a03aac}{Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor}}.
+
+\mbox{\Hypertarget{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_aa0d8b78da14050f7d491f0d8e50fb358}\label{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_aa0d8b78da14050f7d491f0d8e50fb358}} 
+\index{AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}!CreateInputable@{CreateInputable}}
+\index{CreateInputable@{CreateInputable}!AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{CreateInputable()}{CreateInputable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_inputable}{I\+Inputable}} Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor.\+Create\+Inputable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}}]{id }\end{DoxyParamCaption})}
+
+
+
+returns an \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_inputable}{I\+Inputable}} instance representing the page element associated with id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_inputable}{I\+Inputable}}
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_aefae777c17849cc0238a14a77eee0b20}{Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor}}.
+
+\mbox{\Hypertarget{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_ad67b4552578f3b0cc0fab3a1e9f5e6ce}\label{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_ad67b4552578f3b0cc0fab3a1e9f5e6ce}} 
+\index{AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}!CreateReadable@{CreateReadable}}
+\index{CreateReadable@{CreateReadable}!AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{CreateReadable()}{CreateReadable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_readable}{I\+Readable}} Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor.\+Create\+Readable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}}]{id }\end{DoxyParamCaption})}
+
+
+
+returns an \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_readable}{I\+Readable}} instance representing the page element associated with id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_readable}{I\+Readable}}
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a7ad7500812de5fa593742f7eabeeb6fe}{Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor}}.
+
+\mbox{\Hypertarget{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_a68625051fcd9080dc23f6221e8949e16}\label{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_a68625051fcd9080dc23f6221e8949e16}} 
+\index{AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disposes this instance 
+
+
+
+Implemented in \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_ad85226f411b2305f2a548c82bd5cfa35}{Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor}}.
+
+\mbox{\Hypertarget{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_a2acccb4a97af37b0aaad5a752499b739}\label{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_a2acccb4a97af37b0aaad5a752499b739}} 
+\index{AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}!Init@{Init}}
+\index{Init@{Init}!AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor.\+Init (\begin{DoxyParamCaption}\item[{string}]{url }\end{DoxyParamCaption})}
+
+
+
+Specifies the url where page elements should be identified. The parameter url will be assigned to the \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor}{I\+Page\+Object\+Implementor}}\textquotesingle{}s Url property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & string\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a63948c07ac35d2d84efa852e97ecd4f1}{Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_add5e3c188aa67c11087207df262fa546}\label{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_add5e3c188aa67c11087207df262fa546}} 
+\index{AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}!Url@{Url}}
+\index{Url@{Url}!AutomationPractice.PageObjects.IPageObjectImplementor@{AutomationPractice.PageObjects.IPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{Url}{Url}}
+{\footnotesize\ttfamily string Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor.\+Url\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+The url where page elements shoudl be identified 
+
+string
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Page\+Objects/\+Implementors/Page\+Object\+Implementor.\+cs\end{DoxyCompactItemize}

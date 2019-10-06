@@ -1,0 +1,197 @@
+\hypertarget{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor}{}\doxysection{Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor Class Reference}
+\label{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor}\index{AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}}
+
+
+Implments the \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor}{I\+Page\+Object\+Implementor}} interface using the Selenium Web\+Driver  
+
+
+Inheritance diagram for Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.389578cm]{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a63948c07ac35d2d84efa852e97ecd4f1}{Init}} (string url)
+\begin{DoxyCompactList}\small\item\em Assigns Driver.\+Url to url \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_clickable}{I\+Clickable}} \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_aa8b2450a919ee2feb1a5d1e485a03aac}{Create\+Clickable}} (\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Creates an \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_clickable}{I\+Clickable}} instance that corresponds to id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_readable}{I\+Readable}} \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a7ad7500812de5fa593742f7eabeeb6fe}{Create\+Readable}} (\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Creates an \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_readable}{I\+Readable}} instance that corresponds to id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_inputable}{I\+Inputable}} \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_aefae777c17849cc0238a14a77eee0b20}{Create\+Inputable}} (\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Creates an \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_inputable}{I\+Inputable}} instance that corresponds to id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_ad85226f411b2305f2a548c82bd5cfa35}{Dispose}} ()
+\begin{DoxyCompactList}\small\item\em Closes Driver and then disposes Driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+I\+Web\+Driver \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_aa2d9eda3aa3a04b95db9eae9e0d9cb98}{Driver}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em used to locate and perform user interactions on web elements. When Driver is accessed for the first time, it is instantiated as a Chrome\+Driver object with an Implicit Wait Time of 10 Seconds and the Chrome window is maximized. Chrome Version 77 is required. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a26371579dc108bce54199fbbb57dd864}{Url}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em When this property is accessed, it returns Driver.\+Url When this property is assigned a value, it assigns the value to Driver.\+Url \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Open\+Q\+A.\+Selenium.\+By \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a1e9658f189891d5a9fa46d2f9ddb22fb}{transform\+Page\+Element\+ID}} (\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Returns an Open\+Q\+A.\+Selenium.\+By instance that is equivalent to id. Only supports \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}} instances whose Context value is Css, Class\+Name, Id, or X\+Path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_afe1f40b121ff134b74c9cc9d0d600878}\label{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_afe1f40b121ff134b74c9cc9d0d600878}} 
+I\+Web\+Driver {\bfseries \+\_\+driver}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implments the \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor}{I\+Page\+Object\+Implementor}} interface using the Selenium Web\+Driver 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_aa8b2450a919ee2feb1a5d1e485a03aac}\label{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_aa8b2450a919ee2feb1a5d1e485a03aac}} 
+\index{AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}!CreateClickable@{CreateClickable}}
+\index{CreateClickable@{CreateClickable}!AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{CreateClickable()}{CreateClickable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_clickable}{I\+Clickable}} Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor.\+Create\+Clickable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}}]{id }\end{DoxyParamCaption})}
+
+
+
+Creates an \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_clickable}{I\+Clickable}} instance that corresponds to id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_clickable}{I\+Clickable}}
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_a40bccfc5969a143ae73cd16ca2eabf1b}{Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor}}.
+
+\mbox{\Hypertarget{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_aefae777c17849cc0238a14a77eee0b20}\label{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_aefae777c17849cc0238a14a77eee0b20}} 
+\index{AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}!CreateInputable@{CreateInputable}}
+\index{CreateInputable@{CreateInputable}!AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{CreateInputable()}{CreateInputable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_inputable}{I\+Inputable}} Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor.\+Create\+Inputable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}}]{id }\end{DoxyParamCaption})}
+
+
+
+Creates an \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_inputable}{I\+Inputable}} instance that corresponds to id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_inputable}{I\+Inputable}}
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_aa0d8b78da14050f7d491f0d8e50fb358}{Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor}}.
+
+\mbox{\Hypertarget{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a7ad7500812de5fa593742f7eabeeb6fe}\label{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a7ad7500812de5fa593742f7eabeeb6fe}} 
+\index{AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}!CreateReadable@{CreateReadable}}
+\index{CreateReadable@{CreateReadable}!AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{CreateReadable()}{CreateReadable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_readable}{I\+Readable}} Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor.\+Create\+Readable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}}]{id }\end{DoxyParamCaption})}
+
+
+
+Creates an \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_readable}{I\+Readable}} instance that corresponds to id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_readable}{I\+Readable}}
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_ad67b4552578f3b0cc0fab3a1e9f5e6ce}{Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor}}.
+
+\mbox{\Hypertarget{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_ad85226f411b2305f2a548c82bd5cfa35}\label{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_ad85226f411b2305f2a548c82bd5cfa35}} 
+\index{AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily void Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor.\+Dispose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes Driver and then disposes Driver. 
+
+
+
+Implements \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_a68625051fcd9080dc23f6221e8949e16}{Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor}}.
+
+\mbox{\Hypertarget{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a63948c07ac35d2d84efa852e97ecd4f1}\label{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a63948c07ac35d2d84efa852e97ecd4f1}} 
+\index{AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}!Init@{Init}}
+\index{Init@{Init}!AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor.\+Init (\begin{DoxyParamCaption}\item[{string}]{url }\end{DoxyParamCaption})}
+
+
+
+Assigns Driver.\+Url to url 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_automation_practice_1_1_page_objects_1_1_i_page_object_implementor_a2acccb4a97af37b0aaad5a752499b739}{Automation\+Practice.\+Page\+Objects.\+I\+Page\+Object\+Implementor}}.
+
+\mbox{\Hypertarget{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a1e9658f189891d5a9fa46d2f9ddb22fb}\label{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a1e9658f189891d5a9fa46d2f9ddb22fb}} 
+\index{AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}!transformPageElementID@{transformPageElementID}}
+\index{transformPageElementID@{transformPageElementID}!AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{transformPageElementID()}{transformPageElementID()}}
+{\footnotesize\ttfamily Open\+Q\+A.\+Selenium.\+By Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor.\+transform\+Page\+Element\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns an Open\+Q\+A.\+Selenium.\+By instance that is equivalent to id. Only supports \mbox{\hyperlink{class_automation_practice_1_1_page_objects_1_1_page_element_i_d}{Page\+Element\+ID}} instances whose Context value is Css, Class\+Name, Id, or X\+Path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Open\+Q\+A.\+Selenium.\+By
+\end{DoxyReturn}
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_aa2d9eda3aa3a04b95db9eae9e0d9cb98}\label{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_aa2d9eda3aa3a04b95db9eae9e0d9cb98}} 
+\index{AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}!Driver@{Driver}}
+\index{Driver@{Driver}!AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{Driver}{Driver}}
+{\footnotesize\ttfamily I\+Web\+Driver Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor.\+Driver\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+used to locate and perform user interactions on web elements. When Driver is accessed for the first time, it is instantiated as a Chrome\+Driver object with an Implicit Wait Time of 10 Seconds and the Chrome window is maximized. Chrome Version 77 is required. 
+
+I\+Web\+Driver\mbox{\Hypertarget{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a26371579dc108bce54199fbbb57dd864}\label{class_automation_practice_1_1_page_objects_1_1_web_driver_page_object_implementor_a26371579dc108bce54199fbbb57dd864}} 
+\index{AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}!Url@{Url}}
+\index{Url@{Url}!AutomationPractice.PageObjects.WebDriverPageObjectImplementor@{AutomationPractice.PageObjects.WebDriverPageObjectImplementor}}
+\doxysubsubsection{\texorpdfstring{Url}{Url}}
+{\footnotesize\ttfamily String Automation\+Practice.\+Page\+Objects.\+Web\+Driver\+Page\+Object\+Implementor.\+Url\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+When this property is accessed, it returns Driver.\+Url When this property is assigned a value, it assigns the value to Driver.\+Url 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Page\+Objects/\+Implementors/Page\+Object\+Implementor.\+cs\end{DoxyCompactItemize}
