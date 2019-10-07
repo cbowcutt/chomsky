@@ -1,0 +1,4 @@
+page SignIn /signin.html
+    Email #Email
+    Password #Password
+    Login #submit

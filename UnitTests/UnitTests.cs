@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Schema;
 using Xunit;
-
-
-
+using Chomsky;
 using Chomsky.PageObjects;
 using Chomsky.PageObjects.Parser;
 using Chomsky.PageObjects.PageObjectGenerator;
@@ -16,6 +14,15 @@ namespace Chomsky.UnitTests
 
     public class UnitTests
     {
+        [Theory]
+        [InlineData(new string[] {"-i", "./SourceDirectory", "-o", "./Output"}, "./SourceDirectory", "./Output")]
+        [InlineData(new string[] {"-o", "./Output", "-i", "./SourceDirectory"}, "./SourceDirectory", "./Output")]
+        public void Test_ProgramOptions(string[] args, string expectedSource, string expectedPath)
+        {
+            Chomsky.ProgramOptions options = new ProgramOptions(args);
+            Assert.Equal(expectedSource, options.InputDirectory);
+            Assert.Equal(expectedPath, options.OutputDirectory);
+        }
         [Fact]
         public void Test_CreatePageObjectClassFromPageFile()
         {            

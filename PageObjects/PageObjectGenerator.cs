@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.Xml;
@@ -27,7 +28,8 @@ namespace Chomsky.PageObjects.PageObjectGenerator
 
         public void Compile(string fileAsString, System.IO.DirectoryInfo outputDirectory)
         {
-            
+            if(!Directory.Exists(outputDirectory.FullName))
+                Directory.CreateDirectory(outputDirectory.FullName);
             parser.ParseFile(fileAsString).ForEach((PageInfo info) => {
                 CodeCompileUnit unit = pageObjectGenerator.GeneratePageObjectCompileUnit(info);
                 pageObjectGenerator.GenerateCodeToFile(unit, string.Format(@"{0}\{1}.cs", outputDirectory.FullName, info.Name));
@@ -76,7 +78,7 @@ namespace Chomsky.PageObjects.PageObjectGenerator
         }
         public CodeCompileUnit GeneratePageObjectCompileUnit(PageInfo pageInfo)
         {
-            CodeNamespace pageObjectNamespace = new CodeNamespace("AutomationPractice.PageObjects");
+            CodeNamespace pageObjectNamespace = new CodeNamespace("Chomsky.PageObjects");
 
             CodeCompileUnit compileUnit = new CodeCompileUnit();
             CodeNamespace globalNamespace = new CodeNamespace(String.Empty);

@@ -12,7 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PageObjects\PageObjects.csproj"/>
-    <ProjectReference Include="..\Scripts\Scripts.csproj"/>
-    <ProjectReference Include="..\Actors\Actors.csproj"/>
+    <ProjectReference Include="..\app\app.csproj"/>
   </ItemGroup>
 </Project>
