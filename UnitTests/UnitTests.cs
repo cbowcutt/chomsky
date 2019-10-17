@@ -177,15 +177,6 @@ namespace Chomsky.UnitTests
         }
 
         [Fact]
-        public void Test_Translator_PageInfoXmlSchema()
-        {
-            PageObjectTranslator translator = new PageObjectTranslator();
-            System.Xml.Schema.XmlSchema schema = translator.PageInfoXmlSchema();
-            Assert.Equal("Name", (((schema.Items[0] as XmlSchemaComplexType).Particle as XmlSchemaSequence).Items[0] as XmlSchemaElement).Name);
-            Assert.Equal("Url", (((schema.Items[0] as XmlSchemaComplexType).Particle as XmlSchemaSequence).Items[1] as XmlSchemaElement).Name);
-        }
-
-        [Fact]
         public void Test_PageObjectGenerator_CreateClass()
         {
             PageInfo info = new PageInfo("SignIn", "/url");

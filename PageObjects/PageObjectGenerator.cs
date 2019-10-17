@@ -13,19 +13,31 @@ using Chomsky.PageObjects.Parser;
 
 namespace Chomsky.PageObjects.PageObjectGenerator 
 {
+    /// <summary>
+    /// Class for translating contents of .Chomsky files to
+    /// C# classes that are subclasses of Chomsky.PageObjects.Page 
+    /// /// </summary>
     public class Compiler
     {
         private PageObjectGenerator pageObjectGenerator;
         private PageObjectParser parser;
-
         public List<CodeCompileUnit> pageObjectCompileUnits;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Compiler()
         {
             pageObjectGenerator = new PageObjectGenerator();
             parser = new PageObjectParser();
             pageObjectCompileUnits = new List<CodeCompileUnit>();
         }
-
+        /// <summary>
+        /// Generates C# classes that are subclasses of Chomsky.PageObjects.Page 
+        /// from fileAsString.
+        /// </summary>
+        /// <param name="fileAsString">The contents of a .chomsky file as a string</param>
+        /// <param name="outputDirectory">The directory where the generated C# classes will be placed</param>
         public void Compile(string fileAsString, System.IO.DirectoryInfo outputDirectory)
         {
             if(!Directory.Exists(outputDirectory.FullName))
@@ -36,33 +48,10 @@ namespace Chomsky.PageObjects.PageObjectGenerator
             });
         }
     }
-    public class PageObjectTranslator
-    {
-        // public XmlSchema TranslatePageInfoToXml(PageInfo pageInfo)
-        // {
-
-        // } 
-
-        public XmlSchema PageInfoXmlSchema() {
-            XmlSchema pageSchema = new XmlSchema();
-            XmlSchemaComplexType complexType = new XmlSchemaComplexType();
-            complexType.Name = "Page";
-            XmlSchemaSequence sequence = new  XmlSchemaSequence();
-            // XmlSchemaComplexType pageXmlType 
-            XmlSchemaElement pageXmlNameElement = new XmlSchemaElement();
-            pageXmlNameElement.Name = "Name";
-
-            XmlSchemaElement pageXmlUrlElement = new XmlSchemaElement();
-            pageXmlUrlElement.Name = "Url";
-
-            sequence.Items.Add(pageXmlNameElement);
-            sequence.Items.Add(pageXmlUrlElement);
-            complexType.Particle = sequence;
-            pageSchema.Items.Add(complexType);
-            return pageSchema;
-        }
-    }
-
+    /// <summary>
+    /// Contains methods for translating PageInfo instances to C# classes
+    /// that define subclasses of Chomsky.PageObjects.Page
+    /// </summary>
     public class PageObjectGenerator
     {
         /// <summary>
@@ -76,6 +65,11 @@ namespace Chomsky.PageObjects.PageObjectGenerator
             // TODO: namespace that contains classes based 
             GenerateCodeToFile(GeneratePageObjectCompileUnit(pageInfo), path);
         }
+        /// <summary>
+        /// Returns a CodeCompileUnit that describes a subclass of Chomsky.PageObjects.Page
+        /// </summary>
+        /// <param name="pageInfo" type="PageInfo"></param>
+        /// <returns></returns>
         public CodeCompileUnit GeneratePageObjectCompileUnit(PageInfo pageInfo)
         {
             CodeNamespace pageObjectNamespace = new CodeNamespace("Chomsky.PageObjects");
@@ -147,9 +141,9 @@ namespace Chomsky.PageObjects.PageObjectGenerator
         }
         /// <summary>
         /// Returns a CodeMemberProperty:
-        /// public virtual By <\Name> {
+        /// public virtual By Name {
         ///     get {
-        ///         return By.<\ID|\Css|XPath>(<\Locator>);
+        ///         return By.ID|Css|XPath(Locator);
         ///     }
         /// }
         /// 
@@ -157,7 +151,7 @@ namespace Chomsky.PageObjects.PageObjectGenerator
         /// and Locator is the info.Locator;
         /// 
         /// </summary>
-        /// <param name="info"></param>
+        /// <param name="info" type="ElementInfo"></param>
         /// <returns></returns>
         public CodeMemberProperty GenerateByMember(ElementInfo info)
         {
@@ -168,7 +162,11 @@ namespace Chomsky.PageObjects.PageObjectGenerator
             property.GetStatements.Add(new CodeMethodReturnStatement(ConstructFindElementExpression(info)));
             return property;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
         public CodeMethodInvokeExpression ConstructFindElementExpression(ElementInfo info)
         {
             string locatorMethod = null;
@@ -184,7 +182,11 @@ namespace Chomsky.PageObjects.PageObjectGenerator
             CodeMethodInvokeExpression invoke = new CodeMethodInvokeExpression(method, new CodePrimitiveExpression(info.Locator));
             return invoke;
         }
-
+        /// <summary>
+        /// Outputs code generated from compileUnit to sourceFile
+        /// </summary>
+        /// <param name="compileUnit"></param>
+        /// <param name="sourceFile"></param>
         public void GenerateCodeToFile(CodeCompileUnit compileUnit, string sourceFile)
         {
             CodeDomProvider provider = new Microsoft.CSharp.CSharpCodeProvider();
