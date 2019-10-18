@@ -163,6 +163,7 @@ namespace Chomsky.UnitTests
         }
 
         [Theory]
+        [InlineData("input[type='submit']", PageElementSearchContext.Css, "input[type='submit']")]
         [InlineData("#login", PageElementSearchContext.Id, "login")]
         [InlineData("#login > data", PageElementSearchContext.Css, "#login > data")]
         [InlineData(".login", PageElementSearchContext.Css, ".login")]
@@ -187,7 +188,16 @@ namespace Chomsky.UnitTests
                 new ElementInfo("Password", "#password")
             };
             PageObjectGenerator generator = new PageObjectGenerator();
-            generator.CreateClass(info, @"C:\users\chris\test.cs");
+            Assert.False(true, "Not yet implemented");
+            //generator.CreateClass(info, @"C:\users\chris\test.cs");
+        }
+
+        [Theory]
+        [InlineData("input[type='submit']", false)]
+        public void Test_IsHtmlID(string input, bool expected)
+        {
+            ElementInfo info = new ElementInfo();
+            Assert.Equal(expected, info.IsHtmlId(input));
         }
         
 

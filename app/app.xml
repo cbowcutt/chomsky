@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>app</name>
+    </assembly>
+    <members>
+        <member name="M:Chomsky.Program.Main(System.String[])">
+            <summary>
+            arg[0] : directory where .chom files are located
+            arg[1] : output directory
+            </summary>
+            <param name="args"></param>
+        </member>
+    </members>
+</doc>
